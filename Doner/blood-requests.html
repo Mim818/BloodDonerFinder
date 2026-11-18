@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Requests</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">Blood Donor Finder</div>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="blood-requests.html" class="active">Blood Requests <span class="badge" id="navBadge">0</span></a>
+      <a href="donation-history.html">Donation History</a>
+      <a href="profile.html">My Profile</a>
+      <div class="user-box"><b>Karim Rahman</b><br>Donor</div>
+    </div>
+
+    <div class="container">
+
+      <!-- Top bar -->
+      <div class="top-bar">
+        <div>
+          <h2>Blood requests</h2>
+          <p class="sub">Matching B+ in Mirpur, most urgent first.</p>
+        </div>
+        <div class="bell">&#128276;<span class="badge" id="bellCount">0</span></div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button id="tabAll" class="activeTab" onclick="setTab('All')">All</button>
+        <button id="tabDirect" onclick="setTab('Direct')">Direct to me</button>
+        <button id="tabArea" onclick="setTab('Area-wide')">Area-wide</button>
+      </div>
+
+      <!-- Open requests -->
+      <div class="box">
+        <h3>Open requests</h3>
+        <div id="requestList"></div>
+      </div>
+
+      <br>
+
+      <!-- Accepted requests -->
+      <div class="box">
+        <h3>Accepted by you <span class="tag verified" id="activeCount">0 active</span></h3>
+        <div id="acceptedList"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="blood-requests.js"></script>
+</body>
+</html>

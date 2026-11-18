@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donation History</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">Blood Donor Finder</div>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="blood-requests.html">Blood Requests <span class="badge">3</span></a>
+      <a href="donation-history.html" class="active">Donation History</a>
+      <a href="profile.html">My Profile</a>
+      <div class="user-box"><b>Karim Rahman</b><br>Donor</div>
+    </div>
+
+    <div class="container">
+
+      <!-- Top bar -->
+      <div class="top-bar">
+        <div>
+          <h2>Donation history</h2>
+          <p class="sub">Every donation you have made and its verification status.</p>
+        </div>
+      </div>
+
+      <!-- Summary cards -->
+      <div class="cards">
+        <div class="card"><small>Total donations</small><b id="total">0</b><p class="note" id="totalNote"></p></div>
+        <div class="card"><small>Last donation</small><b id="lastDate">-</b><p class="note" id="lastPlace"></p></div>
+        <div class="card"><small>Next eligible date</small><b id="nextDate">-</b><p class="note">3 months after each donation</p></div>
+      </div>
+
+      <div class="two-col">
+
+        <!-- Past donations -->
+        <div class="box">
+          <h3>Past donations</h3>
+          <table>
+            <thead>
+              <tr><th>Date</th><th>Hospital</th><th>Verified by</th><th>Status</th></tr>
+            </thead>
+            <tbody id="donationTable"></tbody>
+          </table>
+        </div>
+
+        <!-- Add a past donation -->
+        <div class="box">
+          <h3>Add a past donation</h3>
+          <form id="myForm" novalidate>
+
+            <!-- Date -->
+            <div class="form-group">
+              <label for="donationDate">Donation date</label>
+              <input type="date" id="donationDate">
+              <span class="error" id="dateError"></span>
+            </div>
+
+            <!-- Hospital -->
+            <div class="form-group">
+              <label for="hospital">Hospital or camp</label>
+              <select id="hospital">
+                <option value="">-- Select Hospital --</option>
+                <option value="City Care Hospital">City Care Hospital</option>
+                <option value="Green Life Clinic">Green Life Clinic</option>
+                <option value="Popular Diagnostic">Popular Diagnostic</option>
+                <option value="Donation camp, Mirpur">Donation camp, Mirpur</option>
+              </select>
+              <span class="error" id="hospitalError"></span>
+            </div>
+
+            <button type="submit">+ Add donation</button>
+            <p class="note">Hospital staff verify it, then your eligibility date updates.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="donation-history.js"></script>
+</body>
+</html>

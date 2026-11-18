@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donor Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">Blood Donor Finder</div>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="blood-requests.html">Blood Requests <span class="badge" id="navBadge">0</span></a>
+      <a href="donation-history.html">Donation History</a>
+      <a href="profile.html">My Profile</a>
+      <div class="user-box"><b>Karim Rahman</b><br>Donor</div>
+    </div>
+
+    <div class="container">
+
+      <!-- Top bar -->
+      <div class="top-bar">
+        <div>
+          <h2 id="greeting">Hello, Karim</h2>
+          <p class="sub">You are helping save lives in Mirpur.</p>
+        </div>
+        <div class="top-right">
+          <div class="switch-box">
+            <span id="availText">Available to donate</span>
+            <label class="switch">
+              <input type="checkbox" id="availToggle" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="bell">&#128276;<span class="badge" id="bellCount">0</span></div>
+        </div>
+      </div>
+
+      <!-- Summary cards -->
+      <div class="cards">
+        <div class="card"><small>Blood group</small><b>B+</b><p class="note">Mirpur, Dhaka</p></div>
+        <div class="card"><small>Total donations</small><b id="totalDonations">0</b><p class="note" id="lastNote"></p></div>
+        <div class="card"><small>Eligibility</small><b id="eligibility">-</b><p class="note" id="eligibleNote"></p></div>
+        <div class="card"><small>Requests answered</small><b id="answered">4</b><p class="note">Across 2 hospitals</p></div>
+      </div>
+
+      <div class="two-col">
+
+        <!-- Matching requests -->
+        <div class="box">
+          <h3>Matching blood requests <span class="tag high" id="newCount">0 new</span></h3>
+          <div id="requestList"></div>
+          <p class="note">The recipient's contact is shared only after you accept.</p>
+        </div>
+
+        <!-- Donation history -->
+        <div class="box">
+          <h3>Donation history</h3>
+          <div id="timeline"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
